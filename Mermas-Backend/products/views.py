@@ -5,7 +5,7 @@ from products.serializers import ProductSerializer
 from .models import Product
 from django.shortcuts import get_object_or_404
 
-class ProuctLlist(generics.ListCreateAPIView): #permite el listado y creación 
+class ProductList(generics.ListCreateAPIView): #permite el listado y creación 
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
 
