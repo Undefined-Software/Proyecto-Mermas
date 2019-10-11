@@ -9,7 +9,8 @@ export class productService{
     private headers = new HttpHeaders().set('Content-Type','application/json');  
     public url:string = 'http://localhost:8000';
 
-    getProductos(): Observable<any>{  
-        return this.http.get(this.url+'/api/products/', {headers: this.headers})     
+    getProducts(): Observable<any>{  
+        
+        return this.http.get('http://localhost:8000/api/products/', {headers: this.headers})     
     }
 }

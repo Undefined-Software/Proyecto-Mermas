@@ -3,6 +3,7 @@ import {Product} from '../../models/product.model';
 import {productService} from '../../services/product.service';
 import { HttpClient } from '@angular/common/http';
 
+
 @Component({
   selector: 'app-productos',
   templateUrl: './productos.component.html',
@@ -19,6 +20,7 @@ export class ProductosComponent implements OnInit {
    }
 
   ngOnInit() {
+    this.getProductos();
   }
 
   getProductos(){

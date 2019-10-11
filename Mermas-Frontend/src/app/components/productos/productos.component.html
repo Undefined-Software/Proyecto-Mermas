@@ -1,1 +1,20 @@
-<h1>Productos</h1>
+<mat-list> 
+    <mat-card *ngIf="products.length == 0" >
+        <h3>No hay productos para mostrar</h3>
+    </mat-card>
+    <div *ngFor="let product of products; let ultimo = last">
+        <mat-card>
+        <mat-list-item>   
+            <mat-icon matListAvatar>dashboard</mat-icon>
+            <h3 matLine>Código del producto: {{product.code}} <br>
+            Nombre del producto: {{product.name}}
+            </h3>
+            <button mat-icon-button >
+            <mat-icon>delete</mat-icon>
+            </button>
+        </mat-list-item>
+        </mat-card>
+        <mat-divider *ngIf="!ultimo" [inset]="true"></mat-divider>
+    </div>   
+</mat-list>
+  
