@@ -37,17 +37,42 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #Django REST framework
+    'rest_framework',
+    #CORS
+    'corsheaders',
+    #Extensions
+    'django_extensions',
+    'products',
+    'waste',
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_PARSER_CLASSES' : (
+        'rest_framework.parsers.JSONParser',
+        'rest_framework.parsers.FormParser',
+        'rest_framework.parsers.MultiPartParser',
+    )
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    #'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    #CORS
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
+
+#CORS
+CORS_ORIGIN_ALLOW_ALL = False
+CORS_ORIGIN_WHITELIST = (
+    'https://127.0.0.1:4200',
+)
 
 ROOT_URLCONF = 'fatboy.urls'
 
@@ -76,11 +101,11 @@ WSGI_APPLICATION = 'fatboy.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'fatboybd',
-        'USER': 'root',
-        'PASSWORD': '',
+        'NAME': 'fatboybd', #Nombre de la bd
+        'USER': 'root',     #Usuario
+        'PASSWORD': '',     #Contraseña
         'HOST': '127.0.0.1',
-        'PORT': '3306',
+        'PORT': '3306',     #Puerto
     }
 }
 
