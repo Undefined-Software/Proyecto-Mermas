@@ -1,4 +1,5 @@
 from django.db import models
+import pylint_plugin_utils 
 
 # Create your models here.
 class Product(models.Model):
