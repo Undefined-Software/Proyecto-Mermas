@@ -10,7 +10,6 @@ export class productService{
     public url:string = 'http://localhost:8000';
 
     getProducts(): Observable<any>{  
-        
-        return this.http.get('http://localhost:8000/api/products/', {headers: this.headers})     
+        return this.http.get(this.url+'/api/products/', {headers: this.headers})     
     }
 }
