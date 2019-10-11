@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {Product} from '../../models/product.model';
+import {productService} from '../../services/product.service';
+import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-productos',
@@ -6,10 +10,29 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./productos.component.css']
 })
 export class ProductosComponent implements OnInit {
+  public products: Array<Product>; 
 
-  constructor() { }
+  constructor(
+    private productService: productService,
+    private http: HttpClient,
+  ) {
+    this.products = [];
+   }
 
   ngOnInit() {
+    this.getProductos();
+  }
+
+  getProductos(){
+    this.productService.getProducts().subscribe(
+      response => {
+        this.products = response;
+        console.log(this.products);
+      },
+      error => {
+          console.log(error);
+      }
+    );  
   }
 
 }
