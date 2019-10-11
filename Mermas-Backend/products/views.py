@@ -10,5 +10,7 @@ class ProuctLlist(generics.ListCreateAPIView): #permite el listado y creación
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
 
-
+class ProductDetail(generics.RetrieveUpdateDestroyAPIView): #Permite la actualización y destrucción de un elemento por 1 id
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
 
