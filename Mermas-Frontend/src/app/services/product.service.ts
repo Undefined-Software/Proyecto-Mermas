@@ -10,6 +10,12 @@ export class productService{
     public url:string = 'http://localhost:8000';
 
     getProducts(): Observable<any>{  
-        return this.http.get(this.url+'/api/products/', {headers: this.headers})     
+        return this.http.get(this.url+'/api/products/list', {headers: this.headers})     
+    }
+
+    addProducto(product: Product):Promise<Product>{
+     return this.http
+     .post(this.url+'/api/products/list', JSON.stringify(product), {headers:this.headers})
+     .toPromise().then();
     }
 }
