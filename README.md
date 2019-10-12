@@ -15,7 +15,7 @@ Pantalla inicial
 ![Pantalla principal proyecto mermas](/ImagenesReadme/pantalla-inicial.jpg)
 
 Pantalla de productos
-![Pantalla de productos](/ImagenesReadme/productos.jpg)
+![Pantalla de productos](/ImagenesReadme/productos.png)
 
 Pantalla agregar nuevo producto
 ![Agregar nuevo producto](/ImagenesReadme/agregar-nuevo-producto.jpg)
