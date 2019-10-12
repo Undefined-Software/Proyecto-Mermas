@@ -11,7 +11,7 @@
             Precio: {{product.price}} <br>
             Cantidad {{product.amount}} <br>
             </h3>
-            <button mat-icon-button >
+            <button mat-icon-button (click)="deleteProduct(product)">
             <mat-icon>delete</mat-icon>
             </button>
         </mat-list-item>
