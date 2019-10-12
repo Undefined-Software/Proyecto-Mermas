@@ -53,7 +53,6 @@ export class ProductosComponent implements OnInit {
   modalNewProduct(){
     this.dialog.open(ModalNewProductComponent,{
       width: '600px',});
-      this.getProductos();
   }
 
   
