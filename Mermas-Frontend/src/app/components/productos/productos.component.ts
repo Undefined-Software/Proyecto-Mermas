@@ -38,9 +38,22 @@ export class ProductosComponent implements OnInit {
     );  
   }
 
+  deleteProduct(product: Product){
+    this.productService.deleteProduct(product.code).subscribe(
+      response => {
+        console.log("se borra producto: " +response);
+        this.products = this.products.filter(prod => prod !== product);
+      },
+      error => {
+        console.log("error: "+ error);
+      }
+    );
+  }
+
   modalNewProduct(){
     this.dialog.open(ModalNewProductComponent,{
       width: '600px',});
+      this.getProductos();
   }
 
   

@@ -14,10 +14,10 @@ export class ModalNewProductComponent implements OnInit {
   image:File = null;
 
   constructor(
-    private productoService: productService,
-    private http: HttpClient
+    private productService: productService,
+    private http: HttpClient,
   ){
-    this.product = new Product('',0,0,0,null);
+    this.product = new Product('',0,0,'',null);
    }
 
   ngOnInit() {
@@ -34,8 +34,9 @@ export class ModalNewProductComponent implements OnInit {
   }
   
   addProducto(){
-    this.productoService.addProducto(this.product).then(
+    this.productService.addProducto(this.product).then(
       () => console.log("error"),
     );
   }
+
 }
