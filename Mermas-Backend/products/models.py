@@ -7,7 +7,7 @@ class Product(models.Model):
     amount = models.PositiveIntegerField(default=0)
     price = models.FloatField(default=0.0)
     code = models.CharField(max_length=10,default='',unique=True)
-    image = models.ImageField(default='')
+    image = models.ImageField(default='', null=True)
 
     def __str__(self):
         return self.name

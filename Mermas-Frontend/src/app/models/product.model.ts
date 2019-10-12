@@ -4,6 +4,6 @@ export class Product{
         public amount: number,
         public price: number,
         public code: number,
-        public image: string
+        public image: any
     ){}
 }

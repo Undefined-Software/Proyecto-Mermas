@@ -43,4 +43,6 @@ export class ProductosComponent implements OnInit {
       width: '600px',});
   }
 
+  
+
 }

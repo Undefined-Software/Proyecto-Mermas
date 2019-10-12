@@ -39,15 +39,9 @@
           <span *ngIf="!productAmount.valid && productAmount.touched">Cantidad requerida</span>
         </mat-hint>
       </mat-form-field>
-
-     
       
-  
-      <!-- <mat-form-field>
-        <mat-label>Seleccionar</mat-label>
-        <input matInput type="file" (ApiResponse)="subirImagen($event)">
-        
-      </mat-form-field> -->
+      <img [src]="imageUrl" style="width: 200px; height: 200px;">
+      <input mat-button color="primary" type="file" #image name="image" (change)="selectImage($event.target.files)"> 
     </form>
    
     <button mat-button [disabled]="!formProducto.valid" color="primary" (click)="addProducto()">Guardar</button>
