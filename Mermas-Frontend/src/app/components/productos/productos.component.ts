@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {Product} from '../../models/product.model';
 import {productService} from '../../services/product.service';
 import { HttpClient } from '@angular/common/http';
+import {MatDialog} from '@angular/material';
+import { ModalNewProductComponent } from '../modal-new-product/modal-new-product.component';
 
 
 @Component({
@@ -15,6 +17,7 @@ export class ProductosComponent implements OnInit {
   constructor(
     private productService: productService,
     private http: HttpClient,
+    public dialog: MatDialog,
   ) {
     this.products = [];
    }
@@ -33,6 +36,11 @@ export class ProductosComponent implements OnInit {
           console.log(error);
       }
     );  
+  }
+
+  modalNewProduct(){
+    this.dialog.open(ModalNewProductComponent,{
+      width: '600px',});
   }
 
 }
