@@ -10,6 +10,7 @@ import { MermasComponent } from './components/mermas/mermas.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ModalNewProductComponent } from './components/modal-new-product/modal-new-product.component';
 import { LayoutModule } from '@angular/cdk/layout';
+import {FormsModule} from '@angular/forms';
 import { 
   MatToolbarModule, 
   MatButtonModule, 
@@ -17,7 +18,9 @@ import {
   MatIconModule, 
   MatListModule,
   MatCardModule,
-  MatDialogModule } from '@angular/material';
+  MatDialogModule,
+  MatFormFieldModule,
+  MatInputModule, } from '@angular/material';
 
 //Services
 import {productService} from './services/product.service';
@@ -34,6 +37,7 @@ import {productService} from './services/product.service';
     ModalNewProductComponent
   ],
   imports: [
+    FormsModule,
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
@@ -45,7 +49,9 @@ import {productService} from './services/product.service';
     MatIconModule,
     MatListModule,
     MatCardModule,
-    MatDialogModule
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
   ],
   providers: [
     productService,

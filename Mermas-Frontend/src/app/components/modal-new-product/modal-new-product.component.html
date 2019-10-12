@@ -1,3 +1,55 @@
-<p>
-  modal-new-product works!
-</p>
+<h2 mat-dialog-title>Agregar nuevo producto</h2>
+<mat-divider></mat-divider>
+<mat-dialog-content>
+  <br>
+  <div class="example-container">
+    <form #formProducto="ngForm">
+      
+      <mat-form-field>
+        <mat-label>Código del producto</mat-label>
+        <input matInput type="number" name="codigo" [(ngModel)]="product.code" #productCode="ngModel" 
+          required pattern="[0-9]+" min=0>
+        <mat-hint>
+          <span *ngIf="!productCode.valid && productCode.touched">Código inválido</span>        
+        </mat-hint>
+      </mat-form-field>
+  
+      <mat-form-field>
+        <mat-label>Nombre</mat-label>
+        <input matInput type="text" #nombre name="nombre" [(ngModel)]="product.name" #productName="ngModel" required>
+        <mat-hint>
+          <span *ngIf="!productName.valid && productName.touched">Nombre de producto requerido</span>
+        </mat-hint>
+      </mat-form-field>
+  
+      <mat-form-field>
+        <mat-label>Precio</mat-label>
+        <input matInput type="number" name="precio" [(ngModel)]="product.price" #productPrice="ngModel" 
+          required pattern="[.0-9]+" min=0>
+        <mat-hint>
+          <span *ngIf="!productPrice.valid && productPrice.touched">Precio inválido</span>        
+        </mat-hint>
+      </mat-form-field>
+  
+      <mat-form-field>
+        <mat-label>Cantidad</mat-label>
+        <input matInput type="number" name="cantidad" [(ngModel)]="product.amount" #productAmount="ngModel" 
+          required pattern="[0-9]+" min=0>
+        <mat-hint>
+          <span *ngIf="!productAmount.valid && productAmount.touched">Cantidad requerida</span>
+        </mat-hint>
+      </mat-form-field>
+
+     
+      
+  
+      <!-- <mat-form-field>
+        <mat-label>Seleccionar</mat-label>
+        <input matInput type="file" (ApiResponse)="subirImagen($event)">
+        
+      </mat-form-field> -->
+    </form>
+   
+    <button mat-button [disabled]="!formProducto.valid" color="primary" (click)="addProducto()">Guardar</button>
+  </div>
+</mat-dialog-content>
